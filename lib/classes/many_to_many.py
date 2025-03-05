@@ -89,6 +89,9 @@ class Magazine:
     def name(self, new_name):
         if isinstance(new_name, str) and 2 <= len(new_name) <= 16:
             self._name = new_name
+        else:
+            raise ValueError("Magazine name must be a string between 2 and 16 characters.")
+    
 
     @property
     def category(self):
@@ -98,6 +101,8 @@ class Magazine:
     def category(self, new_category):
         if isinstance(new_category, str) and new_category:
             self._category = new_category
+        else:
+            raise ValueError("Category must be a non-empty string.")
 
     def articles(self):
         return self._articles
